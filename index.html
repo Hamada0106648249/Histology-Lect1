@@ -1,99 +1,99 @@
-!DOCTYPE html
-html lang=en dir=ltr
-head
-  meta charset=UTF-8 
-  meta name=viewport content=width=device-width, initial-scale=1.0 
-  titleMatch Questtitle
-  link rel=preconnect href=httpsfonts.googleapis.com
-  link rel=preconnect href=httpsfonts.gstatic.com crossorigin
-  link href=httpsfonts.googleapis.comcss2family=Poppinswght@400;600;700&display=swap rel=stylesheet
-  script src=httpscdn.tailwindcss.comscript
-  style
-    root{ --flip 0.6s; }
-    body{ font-family 'Poppins', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; }
-    .perspective{ perspective 1000px; }
-    .card-inner{ positionrelative; width100%; height100%; transform-stylepreserve-3d; transition transform var(--flip) ease; transform rotateY(180deg); }
-    .card.flipped .card-inner{ transform rotateY(0deg); }
-    .card-face{ positionabsolute; inset0; displayflex; align-itemscenter; justify-contentcenter; text-aligncenter; padding0.9rem; border-radius0.75rem; box-shadow0 4px 12px rgba(0,0,0,0.08); -webkit-backface-visibilityhidden; backface-visibilityhidden; }
-    .card-back{ transform rotateY(180deg); colorwhite; font-weight700; font-size1.0rem; letter-spacing0.3px; line-height 1.4; }
-    .matched{ opacity0.55; transform scale(0.97); transition opacity .3s, transform .3s; }
-    .fade-in{ animationfade .35s ease both; }
-    @keyframes fade{ from{ opacity0; transform translateY(6px);} to{opacity1; transformnone;} }
-    .rtl{ direction rtl; }
-  style
-head
-body class=bg-slate-100 min-h-screen flex flex-col items-center justify-center p-4
-  section id=start class=w-full max-w-3xl p-8 bg-white rounded-2xl shadow-xl fade-in
-    h1 class=text-3xl smtext-5xl font-bold text-slate-800 mb-2Match Questh1
-    p class=text-slate-600 mb-2Review Gamep
-    div class=flex items-center gap-2 mb-6
-      span class=text-sm text-slate-600Languagespan
-      button id=btnEN class=px-3 py-1 rounded-lg bg-emerald-600 text-white text-sm font-semiboldENbutton
-      button id=btnAR class=px-3 py-1 rounded-lg bg-slate-200 text-slate-800 text-sm font-semiboldالعربيةbutton
-    div
-    div id=howBlocks class=grid smgrid-cols-2 gap-4 text-slate-700 mb-8
-      div class=bg-emerald-50 border border-emerald-200 p-4 rounded-xl
-        pspan class=font-semibold text-emerald-700Green Cardsspan Terms  Questions.p
-      div
-      div class=bg-indigo-50 border border-indigo-200 p-4 rounded-xl
-        pspan class=font-semibold text-indigo-700Indigo Cardsspan Definitions  Answers.p
-      div
-    div
-    div class=flex items-center gap-3
-      button id=btnStart class=bg-emerald-600 hoverbg-emerald-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform hoverscale-105 shadow-lgStart Gamebutton
-      button id=btnHow class=bg-slate-200 hoverbg-slate-300 text-slate-800 font-semibold py-3 px-6 rounded-lg text-lg transitionHow to Playbutton
-    div
-  section
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Match Quest</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    :root{ --flip: 0.6s; }
+    body{ font-family: 'Poppins', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial; }
+    .perspective{ perspective: 1000px; }
+    .card-inner{ position:relative; width:100%; height:100%; transform-style:preserve-3d; transition: transform var(--flip) ease; transform: rotateY(180deg); }
+    .card.flipped .card-inner{ transform: rotateY(0deg); }
+    .card-face{ position:absolute; inset:0; display:flex; align-items:center; justify-content:center; text-align:center; padding:0.9rem; border-radius:0.75rem; box-shadow:0 4px 12px rgba(0,0,0,0.08); -webkit-backface-visibility:hidden; backface-visibility:hidden; }
+    .card-back{ transform: rotateY(180deg); color:white; font-weight:700; font-size:1.0rem; letter-spacing:0.3px; line-height: 1.4; }
+    .matched{ opacity:0.55; transform: scale(0.97); transition: opacity .3s, transform .3s; }
+    .fade-in{ animation:fade .35s ease both; }
+    @keyframes fade{ from{ opacity:0; transform: translateY(6px);} to{opacity:1; transform:none;} }
+    .rtl{ direction: rtl; }
+  </style>
+</head>
+<body class="bg-slate-100 min-h-screen flex flex-col items-center justify-center p-4">
+  <section id="start" class="w-full max-w-3xl p-8 bg-white rounded-2xl shadow-xl fade-in">
+    <h1 class="text-3xl sm:text-5xl font-bold text-slate-800 mb-2">Match Quest</h1>
+    <p class="text-slate-600 mb-2">Review Game</p>
+    <div class="flex items-center gap-2 mb-6">
+      <span class="text-sm text-slate-600">Language:</span>
+      <button id="btnEN" class="px-3 py-1 rounded-lg bg-emerald-600 text-white text-sm font-semibold">EN</button>
+      <button id="btnAR" class="px-3 py-1 rounded-lg bg-slate-200 text-slate-800 text-sm font-semibold">العربية</button>
+    </div>
+    <div id="howBlocks" class="grid sm:grid-cols-2 gap-4 text-slate-700 mb-8">
+      <div class="bg-emerald-50 border border-emerald-200 p-4 rounded-xl">
+        <p><span class="font-semibold text-emerald-700">Green Cards</span>: Terms / Questions.</p>
+      </div>
+      <div class="bg-indigo-50 border border-indigo-200 p-4 rounded-xl">
+        <p><span class="font-semibold text-indigo-700">Indigo Cards</span>: Definitions / Answers.</p>
+      </div>
+    </div>
+    <div class="flex items-center gap-3">
+      <button id="btnStart" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform hover:scale-105 shadow-lg">Start Game</button>
+      <button id="btnHow" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold py-3 px-6 rounded-lg text-lg transition">How to Play</button>
+    </div>
+  </section>
 
-  div id=howModal class=fixed inset-0 bg-black60 hidden items-center justify-center p-4 z-50
-    div class=bg-white rounded-2xl shadow-2xl p-6 w-full max-w-lg
-      h2 id=howTitle class=text-2xl font-bold text-slate-800 mb-2How to Playh2
-      ul id=howList class=list-disc pl-6 text-slate-700 space-y-2
-        liClick two cards to flip them.li
-        liMatch the span class=font-semibold text-emerald-700Termspan with the span class=font-semibold text-indigo-700Definitionspan.li
-        liFinish in fewest turns for Gold medal.li
-      ul
-      div class=text-right mt-4
-        button id=btnCloseHow class=px-4 py-2 rounded-lg bg-emerald-600 text-white font-semiboldGot itbutton
-      div
-    div
-  div
+  <div id="howModal" class="fixed inset-0 bg-black/60 hidden items-center justify-center p-4 z-50">
+    <div class="bg-white rounded-2xl shadow-2xl p-6 w-full max-w-lg">
+      <h2 id="howTitle" class="text-2xl font-bold text-slate-800 mb-2">How to Play</h2>
+      <ul id="howList" class="list-disc pl-6 text-slate-700 space-y-2">
+        <li>Click two cards to flip them.</li>
+        <li>Match the <span class="font-semibold text-emerald-700">Term</span> with the <span class="font-semibold text-indigo-700">Definition</span>.</li>
+        <li>Finish in fewest turns for Gold medal.</li>
+      </ul>
+      <div class="text-right mt-4">
+        <button id="btnCloseHow" class="px-4 py-2 rounded-lg bg-emerald-600 text-white font-semibold">Got it</button>
+      </div>
+    </div>
+  </div>
 
-  section id=game class=w-full max-w-6xl hidden
-    header class=flex flex-col smflex-row items-center justify-between mb-4 gap-4 smgap-0
-      div class=text-center smtext-left
-        h1 class=text-2xl smtext-3xl font-bold text-slate-800Match Questh1
-      div
-      div class=flex gap-2 items-center flex-wrap justify-center
-        button id=btnRestart class=bg-slate-200 hoverbg-slate-300 text-slate-800 font-semibold py-2 px-4 rounded-lg text-smRestartbutton
-        button id=btnNewSet class=bg-indigo-600 hoverbg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg text-smNew Setbutton
-        div class=flex items-center gap-2 ml-2
-          span class=text-sm text-slate-600 hidden sminlineLangspan
-          button id=btnEN2 class=px-2 py-1 rounded bg-emerald-600 text-white text-xs font-semiboldENbutton
-          button id=btnAR2 class=px-2 py-1 rounded bg-slate-200 text-slate-800 text-xs font-semiboldARbutton
-        div
-      div
-    header
+  <section id="game" class="w-full max-w-6xl hidden">
+    <header class="flex flex-col sm:flex-row items-center justify-between mb-4 gap-4 sm:gap-0">
+      <div class="text-center sm:text-left">
+        <h1 class="text-2xl sm:text-3xl font-bold text-slate-800">Match Quest</h1>
+      </div>
+      <div class="flex gap-2 items-center flex-wrap justify-center">
+        <button id="btnRestart" class="bg-slate-200 hover:bg-slate-300 text-slate-800 font-semibold py-2 px-4 rounded-lg text-sm">Restart</button>
+        <button id="btnNewSet" class="bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2 px-4 rounded-lg text-sm">New Set</button>
+        <div class="flex items-center gap-2 ml-2">
+          <span class="text-sm text-slate-600 hidden sm:inline">Lang:</span>
+          <button id="btnEN2" class="px-2 py-1 rounded bg-emerald-600 text-white text-xs font-semibold">EN</button>
+          <button id="btnAR2" class="px-2 py-1 rounded bg-slate-200 text-slate-800 text-xs font-semibold">AR</button>
+        </div>
+      </div>
+    </header>
 
-    div class=grid grid-cols-3 gap-3 bg-white p-4 rounded-xl shadow mb-6
-      div class=text-centerp class=text-slate-500 text-sm data-i18n=turnsLabelTurnspp id=turns class=text-3xl font-bold text-slate-8000pdiv
-      div class=text-centerp class=text-slate-500 text-sm data-i18n=pairsLabelPairs Foundpp id=pairs class=text-3xl font-bold text-slate-8000  8pdiv
-      div class=text-centerp class=text-slate-500 text-sm data-i18n=trophiesLabelTrophiespdiv id=trophies class=text-3xl&nbsp;divdiv
-    div
-    div id=board class=grid grid-cols-2 smgrid-cols-3 mdgrid-cols-4 gap-4div
-  section
+    <div class="grid grid-cols-3 gap-3 bg-white p-4 rounded-xl shadow mb-6">
+      <div class="text-center"><p class="text-slate-500 text-sm" data-i18n="turnsLabel">Turns</p><p id="turns" class="text-3xl font-bold text-slate-800">0</p></div>
+      <div class="text-center"><p class="text-slate-500 text-sm" data-i18n="pairsLabel">Pairs Found</p><p id="pairs" class="text-3xl font-bold text-slate-800">0 / 8</p></div>
+      <div class="text-center"><p class="text-slate-500 text-sm" data-i18n="trophiesLabel">Trophies</p><div id="trophies" class="text-3xl">&nbsp;</div></div>
+    </div>
+    <div id="board" class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4"></div>
+  </section>
 
-  div id=win class=fixed inset-0 bg-black60 hidden items-center justify-center p-4 z-50
-    div class=bg-white rounded-2xl shadow-2xl p-8 text-center max-w-md w-full transform transition-all scale-95 opacity-0
-      div id=winTrophy class=text-8xl mb-4div
-      h2 id=winTitle class=text-3xl font-bold text-slate-800 mb-2Excellent!h2
-      p id=winMsg class=text-slate-600 mb-6 text-lgp
-      button id=btnPlayAgain class=bg-emerald-600 hoverbg-emerald-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform hoverscale-105 shadow-lgPlay Againbutton
-    div
-  div
+  <div id="win" class="fixed inset-0 bg-black/60 hidden items-center justify-center p-4 z-50">
+    <div class="bg-white rounded-2xl shadow-2xl p-8 text-center max-w-md w-full transform transition-all scale-95 opacity-0">
+      <div id="winTrophy" class="text-8xl mb-4"></div>
+      <h2 id="winTitle" class="text-3xl font-bold text-slate-800 mb-2">Excellent!</h2>
+      <p id="winMsg" class="text-slate-600 mb-6 text-lg"></p>
+      <button id="btnPlayAgain" class="bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 px-8 rounded-lg text-lg transition-transform hover:scale-105 shadow-lg">Play Again</button>
+    </div>
+  </div>
 
-script
-  document.addEventListener('DOMContentLoaded', () = {
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
     const start = document.getElementById('start');
     const game = document.getElementById('game');
     const board = document.getElementById('board');
@@ -119,7 +119,7 @@ script
     const howTitle = document.getElementById('howTitle');
     const howList = document.getElementById('howList');
 
-     === INSERT EXTRACTED CONTENT HERE ===
+    // === INSERT EXTRACTED CONTENT HERE ===
     const POOL_EN = [
         pair('Epithelial Tissue', 'Lining and covering.'),
         pair('Connective Tissue', 'Support.'),
@@ -131,7 +131,7 @@ script
         pair('Regenerative', 'Epithelial tissues are highly mitotic.'),
         pair('Simple Epithelium', 'One layer of cells.'),
         pair('Stratified Epithelium', 'More than one layer of cells.'),
-        pair('Squamous Cells', 'Cells wider than tall (plate or scale like).'),
+        pair('Squamous Cells', 'Cells wider than tall (plate or "scale" like).'),
         pair('Cuboidal Cells', 'Cells are as wide as tall, as in cubes.'),
         pair('Columnar Cells', 'Cells are taller than they are wide, like columns.'),
         pair('Simple Squamous Epithelium', 'Single layer of flat cells with disc-shaped nuclei.'),
@@ -151,114 +151,114 @@ script
         pair('Connective Tissue', 'النسيج الضام - الدعم.'),
         pair('Muscle Tissue', 'النسيج العضلي - الحركة.'),
         pair('Nervous Tissue', 'النسيج العصبي - التحكم.'),
-        pair('Cellularity', 'الخلوية الخلايا متراصة مع مساحات بينية قليلة أو معدومة.'),
-        pair('Polarity', 'القطبية الأنسجة الظهارية لها دائماً سطح قمي وآخر قاعدي.'),
-        pair('Avascular', 'لا وعائي يجب أن تنتشر المغذيات من الطبقة القاعدية.'),
-        pair('Regenerative', 'التجدد الأنسجة الظهارية عالية الانقسام.'),
-        pair('Simple Epithelium', 'الظهارة البسيطة طبقة واحدة من الخلايا.'),
-        pair('Stratified Epithelium', 'الظهارة المطبقة أكثر من طبقة واحدة من الخلايا.'),
-        pair('Squamous Cells', 'خلايا حرشفية خلايا أعرض مما هي طويلة.'),
-        pair('Cuboidal Cells', 'خلايا مكعبة خلايا عرضها مساوٍ لطولها.'),
-        pair('Columnar Cells', 'خلايا عمودية خلايا أطول مما هي عريضة.'),
-        pair('Simple Squamous Epithelium', 'الظهارة الحرشفية البسيطة طبقة واحدة من خلايا مسطحة ذات أنوية قرصية.'),
-        pair('Endothelium', 'البطانة (Endothelium) بطانة ملساء للأعضاء المجوفة.'),
-        pair('Mesothelium', 'المتوسطة (Mesothelium) تبطن التجاويف الصفاقية والجنبية والتيمورية.'),
-        pair('Simple Cuboidal Epithelium', 'الظهارة المكعبة البسيطة طبقة واحدة من خلايا مكعبة ذات أنوية كروية.'),
-        pair('Simple Columnar Epithelium', 'الظهارة العمودية البسيطة طبقة واحدة من خلايا عمودية ذات أنوية بيضاوية.'),
-        pair('Pseudostratified Columnar', 'الظهارة العمودية المطبقة الكاذبة جميع الخلايا تنشأ من الغشاء القاعدي.'),
-        pair('Stratified Epithelia', 'الظهارة المطبقة تحتوي على طبقتين أو أكثر وتتجدد من الأسفل.'),
-        pair('Keratinized Stratified Squamous', 'ظهارة حرشفية مطبقة متقرنة الخلايا السطحية ميتة ومملوءة بالكيراتين.'),
-        pair('Non-keratinized Stratified Squamous', 'ظهارة حرشفية مطبقة غير متقرنة تشكل بطانة رطبة لفتحات الجسم.'),
-        pair('Goblet Cells', 'الخلايا الكأسية خلايا تفرز المخاط في الجهاز التنفسي والهضمي.')
+        pair('Cellularity', 'الخلوية: الخلايا متراصة مع مساحات بينية قليلة أو معدومة.'),
+        pair('Polarity', 'القطبية: الأنسجة الظهارية لها دائماً سطح قمي وآخر قاعدي.'),
+        pair('Avascular', 'لا وعائي: يجب أن تنتشر المغذيات من الطبقة القاعدية.'),
+        pair('Regenerative', 'التجدد: الأنسجة الظهارية عالية الانقسام.'),
+        pair('Simple Epithelium', 'الظهارة البسيطة: طبقة واحدة من الخلايا.'),
+        pair('Stratified Epithelium', 'الظهارة المطبقة: أكثر من طبقة واحدة من الخلايا.'),
+        pair('Squamous Cells', 'خلايا حرشفية: خلايا أعرض مما هي طويلة.'),
+        pair('Cuboidal Cells', 'خلايا مكعبة: خلايا عرضها مساوٍ لطولها.'),
+        pair('Columnar Cells', 'خلايا عمودية: خلايا أطول مما هي عريضة.'),
+        pair('Simple Squamous Epithelium', 'الظهارة الحرشفية البسيطة: طبقة واحدة من خلايا مسطحة ذات أنوية قرصية.'),
+        pair('Endothelium', 'البطانة (Endothelium): بطانة ملساء للأعضاء المجوفة.'),
+        pair('Mesothelium', 'المتوسطة (Mesothelium): تبطن التجاويف الصفاقية والجنبية والتيمورية.'),
+        pair('Simple Cuboidal Epithelium', 'الظهارة المكعبة البسيطة: طبقة واحدة من خلايا مكعبة ذات أنوية كروية.'),
+        pair('Simple Columnar Epithelium', 'الظهارة العمودية البسيطة: طبقة واحدة من خلايا عمودية ذات أنوية بيضاوية.'),
+        pair('Pseudostratified Columnar', 'الظهارة العمودية المطبقة الكاذبة: جميع الخلايا تنشأ من الغشاء القاعدي.'),
+        pair('Stratified Epithelia', 'الظهارة المطبقة: تحتوي على طبقتين أو أكثر وتتجدد من الأسفل.'),
+        pair('Keratinized Stratified Squamous', 'ظهارة حرشفية مطبقة متقرنة: الخلايا السطحية ميتة ومملوءة بالكيراتين.'),
+        pair('Non-keratinized Stratified Squamous', 'ظهارة حرشفية مطبقة غير متقرنة: تشكل بطانة رطبة لفتحات الجسم.'),
+        pair('Goblet Cells', 'الخلايا الكأسية: خلايا تفرز المخاط في الجهاز التنفسي والهضمي.')
     ];
 
     const PAIRS_PER_ROUND = 8; 
     let flipped = []; let found = 0; let turns = 0; let lock = false; let currentRound = []; let currentPool = POOL_EN; let isArabic = false;
 
-    btnStart.addEventListener('click', () = { start.classList.add('hidden'); game.classList.remove('hidden'); newRound(true); });
-    btnRestart.addEventListener('click', () = newRound(true));
-    btnNewSet.addEventListener('click', () = newRound(false, true));
-    btnHow.addEventListener('click', () = { how.classList.remove('hidden'); how.classList.add('flex'); });
-    btnCloseHow.addEventListener('click', () = { how.classList.add('hidden'); how.classList.remove('flex'); });
-    btnPlayAgain.addEventListener('click', () = { hideWin(); newRound(true); });
+    btnStart.addEventListener('click', () => { start.classList.add('hidden'); game.classList.remove('hidden'); newRound(true); });
+    btnRestart.addEventListener('click', () => newRound(true));
+    btnNewSet.addEventListener('click', () => newRound(false, true));
+    btnHow.addEventListener('click', () => { how.classList.remove('hidden'); how.classList.add('flex'); });
+    btnCloseHow.addEventListener('click', () => { how.classList.add('hidden'); how.classList.remove('flex'); });
+    btnPlayAgain.addEventListener('click', () => { hideWin(); newRound(true); });
 
     function setLang(ar){
-      isArabic = !!ar; currentPool = isArabic POOL_AR  POOL_EN;
-      document.documentElement.dir = isArabic 'rtl''ltr';
-      [btnEN, btnEN2].forEach(b={ b.classList.toggle('bg-emerald-600', !isArabic); b.classList.toggle('text-white', !isArabic); b.classList.toggle('bg-slate-200', isArabic); b.classList.toggle('text-slate-800', isArabic);});
-      [btnAR, btnAR2].forEach(b={ b.classList.toggle('bg-emerald-600', isArabic); b.classList.toggle('text-white', isArabic); b.classList.toggle('bg-slate-200', !isArabic); b.classList.toggle('text-slate-800', !isArabic);});
+      isArabic = !!ar; currentPool = isArabic? POOL_AR : POOL_EN;
+      document.documentElement.dir = isArabic? 'rtl':'ltr';
+      [btnEN, btnEN2].forEach(b=>{ b.classList.toggle('bg-emerald-600', !isArabic); b.classList.toggle('text-white', !isArabic); b.classList.toggle('bg-slate-200', isArabic); b.classList.toggle('text-slate-800', isArabic);});
+      [btnAR, btnAR2].forEach(b=>{ b.classList.toggle('bg-emerald-600', isArabic); b.classList.toggle('text-white', isArabic); b.classList.toggle('bg-slate-200', !isArabic); b.classList.toggle('text-slate-800', !isArabic);});
       
       if(isArabic){
-        howBlocks.innerHTML = `div class=bg-emerald-50 border border-emerald-200 p-4 rounded-xl rtlpspan class=font-semibold text-emerald-700بطاقات خضراءspan المصطلحات.pdivdiv class=bg-indigo-50 border border-indigo-200 p-4 rounded-xl rtlpspan class=font-semibold text-indigo-700بطاقات بنفسجيةspan التعريفات.pdiv`;
+        howBlocks.innerHTML = `<div class="bg-emerald-50 border border-emerald-200 p-4 rounded-xl rtl"><p><span class="font-semibold text-emerald-700">بطاقات خضراء</span>: المصطلحات.</p></div><div class="bg-indigo-50 border border-indigo-200 p-4 rounded-xl rtl"><p><span class="font-semibold text-indigo-700">بطاقات بنفسجية</span>: التعريفات.</p></div>`;
         howTitle.textContent = 'طريقة اللعب';
         howList.classList.add('rtl');
-        howList.innerHTML = `liانقر على بطاقتين لعكسهما.liliالأخضر = emالمصطلحem. البنفسجي = emالتعريفem.li`;
-        document.querySelectorAll('[data-i18n=turnsLabel]').forEach(n=n.textContent='الأدوار');
-        document.querySelectorAll('[data-i18n=pairsLabel]').forEach(n=n.textContent='الأزواج');
-        document.querySelectorAll('[data-i18n=trophiesLabel]').forEach(n=n.textContent='الكؤوس');
+        howList.innerHTML = `<li>انقر على بطاقتين لعكسهما.</li><li>الأخضر = <em>المصطلح</em>. البنفسجي = <em>التعريف</em>.</li>`;
+        document.querySelectorAll('[data-i18n="turnsLabel"]').forEach(n=>n.textContent='الأدوار');
+        document.querySelectorAll('[data-i18n="pairsLabel"]').forEach(n=>n.textContent='الأزواج');
+        document.querySelectorAll('[data-i18n="trophiesLabel"]').forEach(n=>n.textContent='الكؤوس');
       } else {
-        howBlocks.innerHTML = `div class=bg-emerald-50 border border-emerald-200 p-4 rounded-xlpspan class=font-semibold text-emerald-700Green Cardsspan Terms.pdivdiv class=bg-indigo-50 border border-indigo-200 p-4 rounded-xlpspan class=font-semibold text-indigo-700Indigo Cardsspan Definitions.pdiv`;
+        howBlocks.innerHTML = `<div class="bg-emerald-50 border border-emerald-200 p-4 rounded-xl"><p><span class="font-semibold text-emerald-700">Green Cards</span>: Terms.</p></div><div class="bg-indigo-50 border border-indigo-200 p-4 rounded-xl"><p><span class="font-semibold text-indigo-700">Indigo Cards</span>: Definitions.</p></div>`;
         howTitle.textContent = 'How to Play';
         howList.classList.remove('rtl');
-        howList.innerHTML = `liClick two cards to flip them.liliGreen = emTermem. Indigo = emDefinitionem.li`;
-        document.querySelectorAll('[data-i18n=turnsLabel]').forEach(n=n.textContent='Turns');
-        document.querySelectorAll('[data-i18n=pairsLabel]').forEach(n=n.textContent='Pairs Found');
-        document.querySelectorAll('[data-i18n=trophiesLabel]').forEach(n=n.textContent='Trophies');
+        howList.innerHTML = `<li>Click two cards to flip them.</li><li>Green = <em>Term</em>. Indigo = <em>Definition</em>.</li>`;
+        document.querySelectorAll('[data-i18n="turnsLabel"]').forEach(n=>n.textContent='Turns');
+        document.querySelectorAll('[data-i18n="pairsLabel"]').forEach(n=>n.textContent='Pairs Found');
+        document.querySelectorAll('[data-i18n="trophiesLabel"]').forEach(n=>n.textContent='Trophies');
       }
       newRound(false, true); 
     }
 
-    [btnEN, btnEN2].forEach(b= b && b.addEventListener('click', () = setLang(false)) );
-    [btnAR, btnAR2].forEach(b= b && b.addEventListener('click', () = setLang(true)) );
+    [btnEN, btnEN2].forEach(b=> b && b.addEventListener('click', () => setLang(false)) );
+    [btnAR, btnAR2].forEach(b=> b && b.addEventListener('click', () => setLang(true)) );
 
-    function pair(green, indigo){ return { green{textgreen}, indigo{textindigo} } }
+    function pair(green, indigo){ return { green:{text:green}, indigo:{text:indigo} } }
     function newRound(resetOnly=false, forceNewSet=false){
       flipped = []; found = 0; turns = 0; lock = false;
       board.innerHTML = ''; trophiesEl.innerHTML = '';
-      turnsEl.textContent = '0'; pairsEl.textContent = `0  ${PAIRS_PER_ROUND}`;
-      if(!resetOnly  forceNewSet){ currentRound = pickRandomPairs(currentPool, PAIRS_PER_ROUND); }
+      turnsEl.textContent = '0'; pairsEl.textContent = `0 / ${PAIRS_PER_ROUND}`;
+      if(!resetOnly || forceNewSet){ currentRound = pickRandomPairs(currentPool, PAIRS_PER_ROUND); }
       const cards = [];
-      currentRound.forEach((p, i) = { cards.push(card('green', p.green.text, i+1)); cards.push(card('indigo', p.indigo.text, i+1)); });
-      shuffle(cards); cards.forEach(c = board.appendChild(renderCard(c)) ); hideWin();
+      currentRound.forEach((p, i) => { cards.push(card('green', p.green.text, i+1)); cards.push(card('indigo', p.indigo.text, i+1)); });
+      shuffle(cards); cards.forEach(c => board.appendChild(renderCard(c)) ); hideWin();
     }
-    function pickRandomPairs(pool, n){ const idx = [...Array(pool.length).keys()]; shuffle(idx); return idx.slice(0,n).map(i = pool[i]); }
-    function shuffle(a){ for(let i=a.length-1;i0;i--){ const j=Math.floor(Math.random()(i+1)); [a[i],a[j]]=[a[j],a[i]] } return a }
+    function pickRandomPairs(pool, n){ const idx = [...Array(pool.length).keys()]; shuffle(idx); return idx.slice(0,n).map(i => pool[i]); }
+    function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]] } return a }
     function card(kind, text, matchId){ return { kind, text, matchId } }
     function renderCard(info){
-      const wrap = document.createElement('div'); wrap.className = 'card perspective h-44 smh-52 cursor-pointer'; wrap.dataset.matchId = info.matchId; wrap.dataset.kind = info.kind;
+      const wrap = document.createElement('div'); wrap.className = 'card perspective h-44 sm:h-52 cursor-pointer'; wrap.dataset.matchId = info.matchId; wrap.dataset.kind = info.kind;
       const inner = document.createElement('div'); inner.className = 'card-inner';
       const front = document.createElement('div'); const back = document.createElement('div');
-      front.className = 'card-face font-semibold text-sm smtext-base leading-snug'; back.className = 'card-face card-back';
-      if(info.kind==='green'){ front.classList.add('bg-emerald-100','text-emerald-900','border-2','border-emerald-300'); back.classList.add('bg-emerald-600'); back.textContent = isArabic 'مصطلح'  'Term'; } 
-      else { front.classList.add('bg-indigo-100','text-indigo-900','border-2','border-indigo-300'); back.classList.add('bg-indigo-600'); back.textContent = isArabic 'تعريف'  'Def'; }
+      front.className = 'card-face font-semibold text-sm sm:text-base leading-snug'; back.className = 'card-face card-back';
+      if(info.kind==='green'){ front.classList.add('bg-emerald-100','text-emerald-900','border-2','border-emerald-300'); back.classList.add('bg-emerald-600'); back.textContent = isArabic? 'مصطلح' : 'Term'; } 
+      else { front.classList.add('bg-indigo-100','text-indigo-900','border-2','border-indigo-300'); back.classList.add('bg-indigo-600'); back.textContent = isArabic? 'تعريف' : 'Def'; }
       front.textContent = info.text; inner.appendChild(front); inner.appendChild(back); wrap.appendChild(inner);
-      wrap.addEventListener('click', () = onCard(wrap));
+      wrap.addEventListener('click', () => onCard(wrap));
       return wrap;
     }
-    function onCard(el){ if(lock  el.classList.contains('flipped')  el.classList.contains('matched')) return; el.classList.add('flipped'); flipped.push(el); if(flipped.length===2){ check(); } }
+    function onCard(el){ if(lock || el.classList.contains('flipped') || el.classList.contains('matched')) return; el.classList.add('flipped'); flipped.push(el); if(flipped.length===2){ check(); } }
     function check(){
       lock = true; turns++; turnsEl.textContent = String(turns);
       const [a,b] = flipped;
       if((a.dataset.matchId===b.dataset.matchId) && (a.dataset.kind!==b.dataset.kind)){
-        flipped.forEach(c = c.classList.add('matched')); found++; pairsEl.textContent = `${found}  ${PAIRS_PER_ROUND}`; resetFlip();
+        flipped.forEach(c => c.classList.add('matched')); found++; pairsEl.textContent = `${found} / ${PAIRS_PER_ROUND}`; resetFlip();
         if(found===PAIRS_PER_ROUND){ setTimeout(showWin, 450); }
-      } else { setTimeout(()={ flipped.forEach(c = c.classList.remove('flipped')); resetFlip(); }, 4000); }  4 Second Delay
+      } else { setTimeout(()=>{ flipped.forEach(c => c.classList.remove('flipped')); resetFlip(); }, 4000); } // 4 Second Delay
     }
     function resetFlip(){ flipped = []; lock = false; }
     function showWin(){
       const { medal, label } = medalFor(turns); winTrophy.innerHTML = medal; winTitle.textContent = label;
-      winMsg.textContent = (isArabic 'اكتملت في '  'Completed in ') + `${turns} ` + (isArabic 'دورًا.'  'turns.');
+      winMsg.textContent = (isArabic? 'اكتملت في ' : 'Completed in ') + `${turns} ` + (isArabic? 'دورًا.' : 'turns.');
       trophiesEl.innerHTML += medal; win.classList.remove('hidden'); win.classList.add('flex');
-      setTimeout(()={ const d = win.querySelector('div'); d.classList.remove('scale-95','opacity-0'); },10);
+      setTimeout(()=>{ const d = win.querySelector('div'); d.classList.remove('scale-95','opacity-0'); },10);
     }
     function hideWin(){ win.classList.add('hidden'); win.classList.remove('flex'); const d = win.querySelector('div'); d.classList.add('scale-95','opacity-0'); }
     function medalFor(t){
-      if(t=12) return { medal'span class=text-amber-400🏆span', label isArabic 'ميدالية ذهبية!'  'Gold Medalist!' };
-      if(t=18) return { medal'span class=text-gray-400🥈span', label isArabic 'ميدالية فضية!'  'Silver Medalist!' };
-      return { medal'span class=text-orange-600🥉span', label isArabic 'ميدالية برونزية!'  'Bronze Medalist!' };
+      if(t<=12) return { medal:'<span class="text-amber-400">🏆</span>', label: isArabic? 'ميدالية ذهبية!' : 'Gold Medalist!' };
+      if(t<=18) return { medal:'<span class="text-gray-400">🥈</span>', label: isArabic? 'ميدالية فضية!' : 'Silver Medalist!' };
+      return { medal:'<span class="text-orange-600">🥉</span>', label: isArabic? 'ميدالية برونزية!' : 'Bronze Medalist!' };
     }
     setLang(false);
   });
-script
-body
-html
+</script>
+</body>
+</html>
